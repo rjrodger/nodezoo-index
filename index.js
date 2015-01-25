@@ -6,12 +6,11 @@
 var request = require('request')
 
 
-
 module.exports = function index( options ){
   var seneca = this
 
   options = seneca.util.deepextend({
-    elastic: 'http://localhost:9200/',
+    elastic: 'http://' + process.env.ES_IP + ':9200/',
     base:    'zoo'
   },options)
 
